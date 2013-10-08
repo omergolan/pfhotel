@@ -21,8 +21,11 @@
         <link rel="stylesheet" type="text/css" href="css/stapel.css" />
         <link rel="stylesheet" type="text/css" href="css/custom.css" />
         
-        <script src="js/jquery.colorbox-min.js"></script>
-        <link rel="stylesheet" href="css/colorbox.css">
+       
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />
+
         
         <link href="css/albumize.css" rel="stylesheet" />
         <script type="text/javascript" src="js/albumize.js"></script>
@@ -37,9 +40,38 @@
             </style>
         <![endif]-->
         <script type="text/javascript">
-            $(document).ready(function() {
-$("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"});
-            });
+          $(document).ready(function() {
+$(".fancybox").fancybox({
+    nextEffect  : 'fade',
+    prevEffect  : 'fade',
+    padding     : 0,
+    margin      : [15, 15, 40, 15],
+    afterLoad   : addLinks,
+    beforeClose : removeLinks,
+    autoPlay    : true,
+    mouseWheel  : true
+});
+
+function addLinks() {
+    var list = $("#dots");
+    
+    if (!list.length) {    
+        list = $('<ul id="dots">');
+    
+        for (var i = 0; i < this.group.length; i++) {
+            $('<li data-index="' + i + '"><label></label></li>').click(function() { $.fancybox.jumpto( $(this).data('index'));}).appendTo( list );
+        }
+        
+        list.appendTo( 'body' );
+    }
+
+    list.find('li').removeClass('active').eq( this.index ).addClass('active');
+}
+
+function removeLinks() {
+    $("#dots").remove();    
+}
+});
                </script>
                <script type="text/javascript">
                $(document).ready(function() {
@@ -253,7 +285,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             
                                    <!-- Family room suite-->
                             <li data-pile="Family room suite">            
-                                <a class="rooms" rel="rooms" href="rooms/IMG_7882.jpg">
+                                <a class="fancybox" rel="gallery1" href="rooms/IMG_7882.jpg">
                                     <span class="tp-info">
                                         <span><p>Family room suite</p></span>
                                     </span>
@@ -261,7 +293,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                                 </li>
                                     <li data-pile="Family room suite">
-                                <a class="rooms" rel="rooms"  href="rooms/IMG_7900.jpg">
+                                <a class="fancybox" rel="gallery1"  href="rooms/IMG_7900.jpg">
                                     <span class="tp-info">
                                         <span><p>Family room suite</p></span>
                                     </span>
@@ -269,7 +301,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                                 </li>
                             <li data-pile="Family room suite">
-                                <a class="rooms" rel="rooms"  href="rooms/IMG_7888.jpg">
+                                <a class="fancybox" rel="gallery1" href="rooms/IMG_7888.jpg">
                                     <span class="tp-info">
                                         <span><p>Family room suite</p></span>
                                     </span>
@@ -279,7 +311,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             
                             <!-- king luxury suite -->
                             <li data-pile="king luxury suite">
-                                <a class="rooms" href="rooms/IMG_7835.jpg">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7835.jpg">
                                     <span class="tp-info">
                                         <span><p>Deluxe suite - luxury king suite</p></span>
                                     </span>
@@ -288,7 +320,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             </li>
                         
                          <li data-pile="king luxury suite">
-                                <a class="rooms" href="rooms/IMG_7930.jpg">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7930.jpg">
                                     <span class="tp-info">
                                         <span><p>Deluxe suite - luxury king suite</p></span>
                                     </span>
@@ -296,7 +328,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="king luxury suite">
-                                <a class="rooms" href="rooms/IMG_7838.jpg">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7838.jpg">
                                     <span class="tp-info">
                                         <span><p>Deluxe suite - luxury king suite</p></span>
                                     </span>
@@ -307,7 +339,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             
                             <!-- Executive Suite (Queen/King) suite -->
                             <li data-pile="Executive Suite (Queen/King)">
-                                <a class="rooms" href="rooms/IMG_7788.jpg">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7788.jpg">
                                     <span class="tp-info">
                                         <span><p>Executive Suite (Queen/King)</p></span>
                                     </span>
@@ -315,7 +347,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Executive Suite (Queen/King)">
-                                <a class="rooms" href="rooms/IMG_7740.jpg">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7740.jpg">
                                     <span class="tp-info">
                                         <span><p>Executive Suite (Queen/King)</p></span>
                                     </span>
@@ -323,7 +355,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Executive Suite (Queen/King)">
-                                <a class="rooms" href="rooms/IMG_7719.jpg">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7719.jpg">
                                     <span class="tp-info">
                                         <span><p>Executive Suite (Queen/King)</p></span>
                                     </span>
@@ -332,7 +364,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             </li>
                             <!-- Dubble Twin Room -->
                             <li data-pile="Dubble Twin Room">
-                                <a class="rooms" href="rooms/IMG_7672.jpg">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7672.jpg">
                                     <span class="tp-info">
                                         <span><p>Dubble Twin Room - Two Twin beds</p></span>
                                     </span>
@@ -340,7 +372,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Dubble Twin Room">
-                                <a class="rooms" href="rooms/IMG_7642.jpg">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7642.jpg">
                                     <span class="tp-info">
                                         <span><p>Dubble Twin Room - Two Twin beds</p></span>
                                     </span>
@@ -348,7 +380,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Dubble Twin Room">
-                                <a class="rooms" href="rooms/IMG_7572.jpg">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7572.jpg">
                                     <span class="tp-info">
                                         <span><p>Dubble Twin Room - Two Twin beds</p></span>
                                     </span>
@@ -357,7 +389,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             </li>
                             <!-- Single Bed shared dorm -->
                             <li data-pile="Single Bed shared dorm">
-                                <a class="rooms" href="rooms/IMG_7154.jpg">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7154.jpg">
                                     <span class="tp-info">
                                         <span><p>Single Bed shared room</p></span>
                                     </span>
@@ -365,7 +397,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Single Bed shared dorm">
-                                <a class="rooms" href="rooms/IMG_7110.jpg">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7110.jpg">
                                     <span class="tp-info">
                                         <span><p>Single Bed shared room</p></span>
                                     </span>
@@ -373,7 +405,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Single Bed shared dorm ">
-                                <a class="rooms" href="rooms/IMG_7174.jpg">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7174.jpg">
                                     <span class="tp-info">
                                         <span><p>Single Bed shared room</p></span>
                                     </span>
@@ -382,7 +414,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                             </li>
                             <!-- Dorms double beds -->
                             <li data-pile="Dorms double beds">
-                            <a class="rooms" href="rooms/IMG_7030.jpg">
+                            <a class="fancybox" rel="gallery6" href="rooms/IMG_7030.jpg">
                                     <span class="tp-info">
                                         <span><p>Dorms - 2/3 double beds</p></span>
                                     </span>
@@ -390,7 +422,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Dorms double beds">
-                                <a class="rooms" href="rooms/IMG_7538.jpg">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7538.jpg">
                                     <span class="tp-info">
                                         <span><p>Dorms - 2/3 double beds</p></span>
                                     </span>
@@ -398,7 +430,7 @@ $("a.rooms").colorbox({rel:'rooms', transition:"none", width:"75%", height:"75%"
                                 </a>
                             </li>
                             <li data-pile="Dorms double beds">
-                                <a class="rooms"v href="rooms/IMG_7443.jpg">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7443.jpg">
                                     <span class="tp-info">
                                         <span><p>Dorms - 2/3 double beds</p></span>
                                     </span>
