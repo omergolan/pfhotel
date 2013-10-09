@@ -58,6 +58,8 @@ height: 200px; left: 100px;
 	 font-size: 0.9rem;
 	font-weight: 400;
 	text-align: center;
+    padding-bottom:4px;
+    left:-5px;
 	/*left: -100%;
 	box-shadow: 
 		1px 1px 1px rgba(0,0,0,0.1),
@@ -66,11 +68,11 @@ height: 200px; left: 100px;
 }
 
 .touch .tp-info {
-	margin-left: 0px;
+	
 }
 .tp-title span{visibility:hidden;}
 
-.tp-title span p { visibility:visible;}
+/*.tp-title span p { visibility:visible;}
 .no-touch .tp-info  {
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -89,12 +91,14 @@ height: 200px; left: 100px;
 	-ms-transition-delay: 150ms;
 	transition-delay: 150ms;
 }
-
+*/
 .no-touch .tp-open li:hover .tp-info {
-	left: 0px;
+	left: 5px;
 }
 
-
+.no-touch .tp-open li .tp-info {
+	left: 5px;
+}
 /*
 .tp-title span:nth-child(2){
 	color: #aaa;
