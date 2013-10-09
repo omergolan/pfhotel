@@ -9,7 +9,7 @@ ul.tp-grid {
 }
 
 #accomendation section.main { }
-
+#albumize-pane {position:relative; margin-top:-150px;}
 .tp-grid li {
 	position: absolute;
 	cursor: pointer;
