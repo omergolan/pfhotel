@@ -64,10 +64,20 @@ function addLinks() {
 function removeLinks() {
     $("#dots").remove();    
 }
+              $(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
 });
-               </script>      
+     </script>      
     </head>
-    
     <body class="impress-not-supported" style="background: url('images/background-till.jpg') repeat!important;
 ">
         <div id="menu">
@@ -242,8 +252,9 @@ function removeLinks() {
                         <strong>Paper Factory Hotel</strong>.</h3>
                 </div>
                 <div id="gallery" class="step slide" data-x="400" data-y="-120" data-scale="0.3">
-                    <div id="entergallery"></div>
-                </div>
+               
+                    <div id="entergallery"><a class="various fancybox.ajax" href="gallery.php">Ajax</a></div></div>
+        
                 <div id="mapabout"></div>
             </div>
             <!-- closing About -->
