@@ -17,25 +17,85 @@
         <script src="js/jmpress.custom.js"></script>
         <link rel="shortcut icon" href="favicon.png" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    </head>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/stapel.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        
+        
+    <script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />        
+    <script src="js/modernizr.custom.63321.js"></script>
+        <!--[if lte IE 7]>
+            <style>
+                .support-note .note-ie {
+                    display:block;
+                }
+            </style>
+        <![endif]-->
+        <script type="text/javascript">
+          $(document).ready(function() {
+$(".fancybox").fancybox({
+    nextEffect  : 'fade',
+    prevEffect  : 'fade',
+    padding     : 0,
+    margin      : [15, 15, 40, 15],
+    afterLoad   : addLinks,
+    beforeClose : removeLinks,
+    autoPlay    : true,
+    mouseWheel  : true
+});
+
+function addLinks() {
+    var list = $("#dots");
     
+    if (!list.length) {    
+        list = $('<ul id="dots">');
+    
+        for (var i = 0; i < this.group.length; i++) {
+            $('<li data-index="' + i + '"><label></label></li>').click(function() { $.fancybox.jumpto( $(this).data('index'));}).appendTo( list );
+        }
+        
+        list.appendTo( 'body' );
+    }
+
+    list.find('li').removeClass('active').eq( this.index ).addClass('active');
+}
+
+function removeLinks() {
+    $("#dots").remove();    
+}
+              $(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
+     </script>      
+    </head>
     <body class="impress-not-supported" style="background: url('images/background-till.jpg') repeat!important;
 ">
         <div id="menu">
             <ul id="nav">
-                <li>
-                    <a id="smlogo" href="#about">
+                <li id="smlogo">
+                    <a href="#about">
                         <span>About</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#discover">
                         <span>Discover</span>
                     </a>
                 </li>
+-->
                 <li>
-                    <a href="#accomendation">
-                        <span>Accomendation</span>
+                    <a href="#accommodation">
+                        <span>Accommodation</span>
                     </a>
                 </li>
                 <li>
@@ -43,18 +103,19 @@
                         <span>Gallery</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#secrets">
                         <span>NYC Secrets</span>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#location">
                         <span>Location</span>
                     </a>
                 </li>
-                <li>
-                    <a id="smC" href="#contact">
+                <li id="smC">
+                    <a href="#contact">
                         <span>Contact</span>
                     </a>
                 </li>
@@ -87,13 +148,13 @@
                 <div class="rightSide">
                     <h4>Soak yourself with inspiration at the Open Canvas Day:</h4>
                     <h3>Sunday, September 22, 2:00pm until 8:00pm Paper Factory Hotel 37-06 36th st, Long Island City, New York Entry: Free (upon RSVP)</h3>
-                    <a target="_blank" href="#">
-                        <img src="images/rsvp.png">
+                    <a class="rotlocd" target="_blank" href="Open-Canvas-Day-Catalogue.pdf">
+                        <img src="images/catalog.png">
                     </a>
-                    <a target="_blank" href="#">
+                    <a id="fbeid" class="rotrocd" target="_blank" href="https://www.facebook.com/events/285929081550008/">
                         <img src="images/fbe.png">
                     </a>
-                    <a target="_blank" href="#">
+                    <a id="fairl" class="rotlocd" target="_blank" href="http://www.fairspirits.com/">
                         <img src="images/fair.png">
                     </a>
                 </div>
@@ -101,21 +162,23 @@
                 <div id="dec2" class="decorimg"></div>
                 <div id="dec3" class="decorimg"></div>
                 <div id="dec4" class="decorimg"></div>
-                <div id="dec5" class="decorimg">    </div>
-                   <div id="can"></div>   <div id="pencil"></div>   <div id="ledder"></div>
+                <div id="dec5" class="decorimg"></div>
+                <div id="can"></div>
+                <div id="pencil"></div>
+                <div id="ledder"></div>
             </div>
             <!-- closing Open Canvas Day -->
             <div id="home" class="step slide" data-x="3000" data-y="-2000">
                 <img src="images/homepage.png" width="100%" />
-                <h4>Opening in Long Island City,<br/>Fall 2013</h4>
+                <h4>Opening in Long Island City,
+                    <br/>Fall 2013</h4>
             </div>
             <!-- closing home -->
             <div id="inkuirer" class="step slide" data-x="2000" data-y="-1450" data-z="-50" data-scale="0.9">
                 <div id="inktop">
                     <h2>More than just a paper factory. More than just a newsletter</h2>
-                    <p id="t12">Whether you are an experienced traveller or a savvy New-Yorker, The Inkuirer is your insider to New York City’s best-kept Secrets. From art and culture festivals and underground events to professional networking opportunities. We will make sure to keep you updated and Inspired at all times!
-                  </p><p id="t13">Sign up now to join our Rewards Club. No spam, we promise. Your privacy is important to us.
-Each month we will grant our subscribers with exclusive benefits and early bird promotions to be enjoyed upon your stay at The Paper Factory Hotel.</p>
+                    <p id="t12">Whether you are an experienced traveller or a savvy New-Yorker, The Inkuirer is your insider to New York City’s best-kept Secrets. From art and culture festivals and underground events to professional networking opportunities. We will make sure to keep you updated and Inspired at all times!</p>
+                    <p id="t13">Sign up now to join our Rewards Club. No spam, we promise. Your privacy is important to us. Each month we will grant our subscribers with exclusive benefits and early bird promotions to be enjoyed upon your stay at The Paper Factory Hotel.</p>
                     <div id="mc_embed_signup">
                         <form action="http://thepaperfactoryhotel.us7.list-manage1.com/subscribe/post?u=3170a53f6cf4ca450b95fcf9c&amp;id=83cb68cb21" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
@@ -163,8 +226,8 @@ Each month we will grant our subscribers with exclusive benefits and early bird 
                 <div id="aboutheader"></div>
                 <div id="abouttitle"></div>
                 <div id="thepaperfactory" class="step slide" data-x="-10" data-y="-100" data-scale="0.3">
-                    <h2>We took a building with a meaningful legacy as a paper factory, and turned it into the most inspiring hotel in New York City.</h2>
-                    <p>We are reinventing luxury, embracing industrial design, and smashing the stereotype of your normal hotel experience The ‘Paper Factory Hotel’ is championing a new era of development, innovation, and trendsetting in a neighborhood known for its old industrious roots. As we were designing our brand concept, we wanted to keep the old charm from the industrial age in which Long Island City calls home. Instead of knocking down sacred landmarks - we embraced them – inspired from an era in which creating new ways of doing business ushered in a completely new age in America. ‘The Industrial revolution’.</p>
+                    <h2>We took a building with a meaningful legacy as a once thriving paper factory, and turned it into the most inspiring hotel in New York City. We have preserved its intricate machines and interspersed them in our space, keeping alive the roots of our hotel and the stories it brings with it.</h2>
+                    <p>The Paper Factory Hotel is leading a new era of development, innovation, and trendsetting in a neighborhood known for its industrious origins. As we were designing our brand concept, we wished to hold on to the charm of this industrial age, which Long Island City calls home, while propelling it into the future. Instead of knocking down sacred landmarks, we embraced them, inspired by the Industrial Revolution, an era,in which creating new ways of doing business ushered in a turning point in American history.</p>
                     <h3>The Paper Factory Hotel is championing a new era of development, innovation, and trendsetting.</h3>
                     <a class="rotl" href="#history">
                         <img width="420" style="margin-right:5px;" src="images/historyb.png">
@@ -176,75 +239,229 @@ Each month we will grant our subscribers with exclusive benefits and early bird 
                         <img width="220" style="" src="images/galleryb.png">
                     </a>
                 </div>
-                <div id="history" class="step slide" data-x="-300" data-y="160" data-scale="0.1">
+                <div id="history" class="step slide" data-x="-330" data-y="160" data-scale="0.3">
                     <h2>Long Island city is a historic piece of New York. We’re embracing the neighborhood’s history, and leading it into the future.</h2>
                     <p>Long Island City has a prominent place in New York’s history. Early settlers in this area were originally interested in the rich soil for farming. At the turn of the 20th century major traffic infrastructure delivered new opportunity for the area to host a vast supply of manufacturing business; a perfect entry point into the industrial age. During the 1970’s Long Island City lost a major portion of its business to world competitors. As a result, a lot of buildings in the area were abandoned and unused for decades. One of them, is a huge paper factory on the 36th street, overlooking Manhattan. Starting in the late 1990’s the area went through a period of gentrification where a large volume of business and cultural influence came back to Long Island City. Currently Long Island City is the most culturally and economically booming neighborhood in New York City. With area attractions like The Noguchi museum, 5 Pointz, and MoMA PS1, you will have plenty local landmarks to discover during your stay.</p>
                 </div>
                 <div id="bgimgabout"></div>
                 <div id="bgimgabout1"></div>
-                <div id="gallery" class="step slide" data-x="-100" data-y="-120" data-scale="0.1">
-                    <div id="entergallery"></div>
+                <div id="revolution" class="step slide" data-x="190" data-y="160" data-scale="0.3">
+                    <h2>Forget about a one-dimensional hotel accommodation. We’re about the individual experience and the community.</h2>
+                    <p>At The Paper Factory Hotel we are challenging the current paradigm of hospitality in the United States. When you set upon your journey to discover the world, one fundamental aspect of that is connecting with other travelers, innovators, pioneers, and non-conformists along the way. We feel that this concept needs to be reawoken. Join us as we break the current confines and elevate expectations to new heights. We will help connect you with other like-minded individuals so that you might perhaps motivate each other and restore innovation to all aspects of life.</p>
+                    <h3>We live, we love, we inspire, and we travel. We are The
+                        <strong>Paper Factory Hotel</strong>.</h3>
                 </div>
-                <div id="revolution" class="step slide" data-x="190" data-y="160" data-scale="0.1">
-                    <h2>Forget about a sterile hotel accommodation. We’re about the experience and the community.</h2>
-                    <p>We at The Paper Factory Hotel refuse to accept the status quo of the current paradigm of hoteling in the United States. When you set upon your adventure to discover the world, an aspect of that journey is to connect with other travelers, innovators, pioneers, and non-conformist along the way. We feel that this concept has been lost. We are bringing back that sense of community. Join us as we break the confines of current hospitality expectations and we elevate them to new heights. We will connect you with other like-minded individuals to inspire each other and innovate in all aspects in life.</p>
-                    <h3>We live, we love, we inspire, and we travel. We are The Paper Factory Hotel.</h3>
-                </div>
+                <div id="gallery" class="step slide" data-x="400" data-y="-120" data-scale="0.3">
+               
+                    <div id="entergallery"><a class="various fancybox.ajax" href="gallery.php">Ajax</a></div></div>
+        
                 <div id="mapabout"></div>
             </div>
             <!-- closing About -->
-            <div id="discover" class="step slide" data-x="3800" data-y="100" data-rotate="180" data-scale="2">
-                <div id="stay" class="step slide" data-x="-250" data-y="-80" data-scale="0.3">
-                    <div class="titleimg">
-                        <img width="30%" height="30%" src="images/stayt.png">
+            <div id="accommodation" class="step slide" data-x="3000" data-y="1300" data-scale="0.2">
+                <section class="main">
+                    <div class="wrapper">
+                        <div class="topbar">
+                            <span id="close" class="back">&larr; Back</span>
+                            <h2>Our Rooms</h2>
+                            <h3 id="name"></h3>
+                        </div>
+                        <ul id="tp-grid" class="tp-grid">
+                            
+                                   <!-- Family room suite-->
+                            <li data-pile="Family room suite">            
+                                <a class="fancybox" rel="gallery1" href="rooms/IMG_7882.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Family room suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7882.jpg" />
+                                </a>
+                                </li>
+                                    <li data-pile="Family room suite">
+                                <a class="fancybox" rel="gallery1"  href="rooms/IMG_7900.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Family room suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7900.jpg" />
+                                </a>
+                                </li>
+                            <li data-pile="Family room suite">
+                                <a class="fancybox" rel="gallery1" href="rooms/IMG_7888.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Family room suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7888.jpg" />
+                                </a>
+                            </li>
+                              <li data-pile="Family room suite">
+                                <a class="fancybox" rel="gallery1" href="rooms/IMG_7900.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Family room suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7900.jpg" />
+                                </a>
+                            </li>
+                            
+                            <!-- king luxury suite -->
+                            <li data-pile="king luxury suite">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7835.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Deluxe suite - luxury king suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7835.jpg" />
+                                </a>
+                            </li>
+                        
+                         <li data-pile="king luxury suite">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7930.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Deluxe suite - luxury king suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7930.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="king luxury suite">
+                                <a class="fancybox" rel="gallery2" href="rooms/IMG_7838.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Deluxe suite - luxury king suite</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7838.jpg" />
+                                </a>
+                            </li>
+                           
+                            
+                            <!-- Executive Suite (Queen/King) suite -->
+                            <li data-pile="Executive Suite (Queen/King)">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7788.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Executive Suite (Queen/King)</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7788.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Executive Suite (Queen/King)">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7740.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Executive Suite (Queen/King)</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7740.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Executive Suite (Queen/King)">
+                                <a class="fancybox" rel="gallery3" href="rooms/IMG_7719.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Executive Suite (Queen/King)</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7719.jpg" />
+                                </a>
+                            </li>
+                            <!-- Dubble Twin Room -->
+                            <li data-pile="Dubble Twin Room">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7672.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dubble Twin Room - Two Twin beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7672.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Dubble Twin Room">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7642.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dubble Twin Room - Two Twin beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7642.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Dubble Twin Room">
+                                <a class="fancybox" rel="gallery4" href="rooms/IMG_7572.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dubble Twin Room - Two Twin beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7572.jpg" />
+                                </a>
+                            </li>
+                            <!-- Single Bed shared dorm -->
+                            <li data-pile="Single Bed shared dorm">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7154.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Single Bed shared room</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7154.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Single Bed shared dorm">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7110.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Single Bed shared room</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7110.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Single Bed shared dorm ">
+                                <a class="fancybox" rel="gallery5" href="rooms/IMG_7174.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Single Bed shared room</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7174.jpg" />
+                                </a>
+                            </li>
+                         
+                            <!-- Dorms double beds -->
+                            <li data-pile="Dorms double beds">
+                            <a class="fancybox" rel="gallery6" href="rooms/IMG_7030.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7030.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Dorms double beds">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7538.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7538.jpg" />
+                                </a>
+                            </li>
+                          
+                                              <li data-pile="Dorms double beds">
+                            <a class="fancybox" rel="gallery6" href="rooms/IMG_7518.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7518.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Dorms double beds">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7536.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7536.jpg" />
+                                </a>
+                            </li>
+                            <li data-pile="Dorms double beds">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7546.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7546.jpg" />
+                                </a>
+                            </li>    
+                              <li data-pile="Dorms double beds">
+                                <a class="fancybox" rel="gallery6" href="rooms/IMG_7443.jpg">
+                                    <span class="tp-info">
+                                        <span><p>Dorms - 2/3 double beds</p></span>
+                                    </span>
+                                    <img src="rooms/IMG_7443.jpg" />
+                                </a>
+                            </li>
+                           
+                        </ul>
                     </div>
-                    <p>Whether you are traveling on your own or with a friend, as a couple or with a group, for business or pleasure, to recharge or work hard, look no further! We have the ideal setup for you. And the best part? It’s affordable, accessible and unique.
-</p><p>
-The Paper Factory Hotel is about being part of a community and granting yourself an uplifting experience that peeks into the New York City lifestyle.
-</p>
-                    <div id="stayimg"></div>
-                </div>
-                <div id="dine" class="step slide" data-x="0" data-y="-80" data-scale="0.3">
-                    <div class="titleimg">
-                        <img style="" width="30%" height="30%" src="images/dinet.png">
-                    </div>
-                    <p>Don’t go chewing anywhere else: The Paper Factory Hotel has it all. At our fusion restaurant, you’ll find all kinds of mouthwatering dishes, made of the freshest materials from local organic farms.</p>
-                    <div id="dineimg"></div>
-                </div>
-                <div id="drink" class="step slide" data-x="250" data-y="-80" data-scale="0.3">
-                    <div class="titleimg">
-                        <img style="" width="40%" height="40%" src="images/drinkt.png">
-                    </div>
-                    <p>The Paper Factory Hotel never goes asleep, even when night falls. Whatever your drink is, fine wine, smoky scotch, or cold clear beer, you’re invited to sip it at a few exclusive bar locations within The Paper Factory Hotel.</p>
-                    <div id="drinkimg"></div>
-                </div>
-                <div id="work" class="step slide" data-x="-250" data-y="150" data-scale="0.3">
-                    <div class="titleimg">
-                        <img style="" width="40%" height="40%" src="images/workt.png">
-                    </div>
-                    <p>The Paper Factory Hotel is not just a tourist-hang-out. NYC is about keeping your business running. When you have work to be done, your own private desk will be waiting for you at our business center. The business center is available for everyone who’s in need of a work-space: guests and visitors.</p>
-                    <div id="workimg"></div>
-                </div>
-                <div id="relax" class="step slide" data-x="0" data-y="150" data-scale="0.3">
-                    <div class="titleimg">
-                        <img style="" width="40%" height="40%" src="images/relaxt.png">
-                    </div>
-                    <p>When tired after discovering the NYC life, The Paper Factory Hotel will take care of your sore body and soul. Spa, Massages, or a chill evening on our outdoor decks are just a few options for you to relax.</p>
-                    <div id="relaximg"></div>
-                </div>
-                <div id="inspire" class="step slide" data-x="250" data-y="150" data-scale="0.3">
-                    <div class="titleimg">
-                        <img style="" width="40%" height="40%" src="images/inspiret.png">
-                    </div>
-                    <p>Meet people. Go through life-changing experiences. Get disclosed to art, culture and technology. Inspire, get inspired, and live the NYC life to the fullest. The Paper Factory Hotel offers a vast program of conventions, talks, tours and community hangouts. Everything to make your mind working and your heart pumping.</p>
-                    <div id="inspireimg"></div>
-                </div>
+                </section>
             </div>
-            <!-- closing discover -->
-            <div id="secrets" class="step slide" data-x="-200" data-y="-1800" data-z="1000" data-rotate="300" data-scale="0.4">
-                <div id="thesecrets"></div>
-            </div>
-            <!-- closing secrets -->
+            <!-- closing home -->
             <div id="overview" class="step" data-x="1500" data-y="-1000" data-scale="5"></div>
             <!-- closing Overview -->
         </div>
@@ -259,6 +476,36 @@ The Paper Factory Hotel is about being part of a community and granting yourself
         <script type="text/javascript">
             $(function() {
                 $('#impress').jmpress();
+
+            });
+        </script>
+        <script type="text/javascript" src="js/jquery.stapel.js"></script>
+        <script type="text/javascript">
+      
+            $(function() {
+
+                var $grid = $('#tp-grid'),
+                    $name = $('#name'),
+                    $close = $('#close'),
+                    $loader = $('<div class="loader"><i></i><i></i><i></i><i></i><i></i><i></i><span>Loading...</span></div>').insertBefore($grid),
+                    stapel = $grid.stapel({
+                        delay: 50,
+                        onLoad: function() {
+                            $loader.remove();
+                        },
+                        onBeforeOpen: function(pileName) {
+                            $name.html(pileName);
+                        },
+                        onAfterOpen: function(pileName) {
+                            $close.show();
+                        }
+                    });
+
+                $close.on('click', function() {
+                    $close.hide();
+                    $name.empty();
+                    stapel.closePile();
+                });
 
             });
         </script>
