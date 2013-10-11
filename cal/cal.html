@@ -1,47 +1,133 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"    
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<link href="http://www.google.com/calendar/embed/0902af78d156ff59d784264bd8e02edfembedcompiled.css" type="text/css" rel="stylesheet">
-		
-	</head>
-<body bgcolor="#f1f1f1">
+<html>
+  <head>
+    <link href="jquery.gcal_flow.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("jquery", "1.7.1");
+    </script>
+    <script>
+      _gCalFlow_debug = true;
+    </script>
+    <script type="text/javascript" src="jquery.gcal_flow.js"></script>
+    <script type="text/javascript">
+      var $ = jQuery;
+      $(function() {
+        $('#gcf-simple').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com'
+        });
+        $('#gcf-design').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 10
+        });
+        $('#gcf-custom-template').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 50,
+          mode: 'updates',
+          date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
+        });
+      });
+    </script>
+    <style type="text/css">
+      h2 { clear: both; margin-top: 2em; }
+      #gcf-design .gcf-header-block { background: green; filter: none; }
+      #gcf-design { height: 300px; width: 500px; background: #F0FFEE; filter: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Google Calendar Flow plugin Examples</h1>
 
-<div id="test"></div>
-<div id="test2"></div>
-<script language="JavaScript" type="text/javascript" src="egcal.js" charset="utf-8"></script>
-<iframe id="icalendar" width="680px" height="680px" allowtransparency="true" frameborder="0">
-</iframe>
+    <p>
+      See <a href="http://sugi.github.io/jquery-gcal-flow/">http://sugi.github.io/jquery-gcal-flow/</a> for details.
+    </p>
 
-<script language="JavaScript" type="text/javascript">
-	  var content = "<html><body bgcolor='transparent'></body></html>";
-    var targetName = "icalendar";
-   	var targetFrame = document.getElementById(targetName);
-     
-    var doc = targetFrame.contentDocument;
-    if (doc == undefined || doc == null)
-            doc = targetFrame.contentWindow.document;
-        doc.open();
-        doc.write(content);
-        doc.close();	
-</script>
+    <h2>Simple way</h2>
+    <div id="gcf-simple">  
+    </div>
+    <textarea  cols="60" rows="20">
+    <div id="gcf-simple">
+    </div>
+    <script type="text/javascript">
+      $('#gcf-simple').gCalFlow({
+        calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com'
+      });
+    </script>
+    </textarea>
 
+<br><br>
+    <h2>Change size and color by CSS and option</h2>
+    <div id="gcf-design">
+    </div>
+    <textarea  cols="60" rows="20">
+    <style type="text/css">
+      #gcf-design {
+        height: 300px;
+        width: 500px;
+        background: #F0FFEE;
+        filter: none;
+      }
+      #gcf-design .gcf-header-block { background: green; filter:none; }
+    </style>
+    <div id="gcf-design">
+    </div>
+    <script type="text/javascript">
+      $('#gcf-design').gCalFlow({
+        calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+        maxitem: 10
+      });
+    </script>
+    </textarea>
 
-<script language="JavaScript" type="text/javascript">
-var gcalfeeds = [ 
-//									{"id":"93a20f6ujls11lk9e74o1a1428%40group.calendar.google.com", "color":"#de5510"  },
-									{"id":"d3m1a40k4kbgs9bvq1c1bi54uc%40group.calendar.google.com", "color":"#4cb052"  },
-									{"id":"5ebffb9ql9kaak4i1c1m4j38i0%40group.calendar.google.com", "color":"#ff3352"  }
-//									{"id":"c51rl5e7mdo1hb9i2bhv4of9os%40group.calendar.google.com", "color":"#0033f2"  },
-//									{"id":"t9j4m79ev7ungtjelsobkohl2s%40group.calendar.google.com", "color":"#ff33f2"  }
-								];
+    <h2>Custom DOM for template and recent update mode</h2>
+    <div id="gcf-custom-template">
+      <div class="gcf-header-block">
+        <div class="gcf-title-block">
+          <span class="gcf-title">Your calendar name</span> Updates:
+        </div>
+      </div>
+      <div class="gcf-item-container-block">
+        <div class="gcf-item-block">
+          <div class="gcf-item-header-block">
+            <div class="gcf-item-title-block">
+              <a class="gcf-item-link"><span class="gcf-item-update-date">2012-02-01 09:00</span>:</a>
+              <strong class="gcf-item-title">Item Title of Your event</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gcf-last-update-block">
+        LastUpdate: <span class="gcf-last-update">2012-02-30 20:58</span>
+      </div>
+    </div>
+<textarea cols="60" rows="20">
+    <div id="gcf-custom-template">
+      <div class="gcf-header-block">
+        <div class="gcf-title-block">
+          <span class="gcf-title">Your calendar name</span> updates
+        </div>
+      </div>
+      <div class="gcf-item-container-block">
+        <div class="gcf-item-block">
+          <div class="gcf-item-header-block">
+            <div class="gcf-item-title-block">
+              <a class="gcf-item-link"><span class="gcf-item-update-date">2012-02-01 09:00</span>:</a>
+              <strong class="gcf-item-title">Item Title of Your event</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gcf-last-update-block">
+        LastUpdate: <span class="gcf-last-update">2012-02-30 20:58</span>
+      </div>
+    </div>
+    <script type="text/javascript">
+        $('#gcf-custom-template').gCalFlow({
+          calid: 'linuxfoundation.org_34363837313836302d343036@resource.calendar.google.com',
+          maxitem: 50,
+          mode: 'updates',
+          date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
+        });
+    </script>
+</textarea>
 
-fundamental = new EGCalendarFundamental("fundamental", 0);
-
-var egcalendar = new EGCalendar("egcalendar", document.getElementById("icalendar"),  gcalfeeds, fundamental);
-
-</script>
-
-</body>
+  </body>
 </html>
