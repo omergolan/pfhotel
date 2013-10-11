@@ -64,15 +64,15 @@ function addLinks() {
 function removeLinks() {
     $("#dots").remove();    
 }
-              $(".various").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
-		fitToView	: false,
-		width		: '70%',
-		height		: '70%',
-		autoSize	: false,
+     $(".various").fancybox({
+		maxWidth	: 1024,
+		maxHeight	: 650,
+		fitToView	: true,
+		width		: '80%',
+		height		: '80%',
+		autoSize	: true,
 		closeClick	: false,
-		openEffect	: 'none',
+		openEffect	: 'True',
 		closeEffect	: 'none'
 	});
 });
@@ -253,7 +253,9 @@ function removeLinks() {
                 </div>
                 <div id="gallery" class="step slide" data-x="400" data-y="-120" data-scale="0.3">
                
-                    <div id="entergallery"><a class="various fancybox.ajax" href="gallery.php">Ajax</a></div></div>
+                    <a class="various" data-fancybox-type="iframe" href="/galleries/galleries.html"><div id="entergallery"></div></a>
+
+        </div>
         
                 <div id="mapabout"></div>
             </div>
