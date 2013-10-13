@@ -12,18 +12,9 @@
     <script type="text/javascript">
       var $ = jQuery;
       $(function() {
-        $('#gcf-simple').gCalFlow({
-          calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com'
-        });
         $('#gcf-design').gCalFlow({
           calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com',
           maxitem: 10
-        });
-        $('#gcf-custom-template').gCalFlow({
-          calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com',
-          maxitem: 50,
-          mode: 'updates',
-          date_formatter: function(d, allday_p) { return (d.getMonth()+1) + "/" + d.getDate() + "/" + d.getYear().toString().substr(-2) }
         });
       });
     </script>
