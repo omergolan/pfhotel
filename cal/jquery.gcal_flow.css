@@ -9,19 +9,19 @@
   padding-bottom: 0.5em; }
   .gCalFlow a, .gCalFlow a:visited, .gCalFlow a:hover {
     color: inherit;
-    _color: black;
+    color: black;
     background-color: transparent;
     text-decoration: none; }
   .gCalFlow a:hover {
     text-decoration: underline; }
   .gCalFlow .gcf-header-block {
-    padding: 5px 4px; }
+    padding: 6px 4px; }
   .gCalFlow .gcf-title-block {
     font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     color: white; }
     .gCalFlow .gcf-title-block a, .gCalFlow .gcf-title-block a:visited, .gCalFlow .gcf-title-block a:hover {
-      _color: white; }
+      color: white; }
   .gCalFlow .gcf-last-update-block {
     font-size: 76%;
     text-align: right;
@@ -47,7 +47,7 @@
     font-size: 76%;
     font-weight: bold; }
   .gCalFlow .gcf-item-title-block {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9); }
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); padding-left:5px;}
   .gCalFlow .gcf-item-body-block {
     font-size: 80%;
     font-color: #999;
@@ -64,7 +64,7 @@
   background: -moz-linear-gradient(top, white, #eeeeee);
   background: -o-linear-gradient(top, white, #eeeeee);
   background: linear-gradient(to bottom, white, #eeeeee);
-  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffffff,EndColorStr=#ffeeeeee);
+  filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ffeeee);
   zoom: 1;
   color: blak; }
   .gCalFlow .gcf-header-block {
@@ -82,3 +82,22 @@
     zoom: 1; }
   .gCalFlow .gcf-item-body-block {
     color: #333; }
+
+#gcf-ticker {margin-left:70px;}       
+        
+#gcf-ticker .gcf-header-block {
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  float: left;
+  height: 38px;
+}
+#gcf-ticker .gcf-item-container-block {
+  margin-top: 0.2em;
+  overflow: hidden;
+} 
+#gcf-ticker .gcf-item-block .gcf-item-description {
+  color: #888;
+  font-size: 80%;
+}
+#gcf-ticker .gcf-item-description:before { content: " -- "; color: #aaa; }

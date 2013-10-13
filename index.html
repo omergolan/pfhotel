@@ -20,7 +20,10 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/stapel.css" />
         <link rel="stylesheet" type="text/css" href="css/custom.css" />
-        
+         
+               <link href="cal/jquery.gcal_flow.css" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="cal/jquery.gcal_flow.js"></script>
+
         
     <script type="text/javascript" src="js/jquery.fancybox.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" />        
@@ -70,6 +73,18 @@ function removeLinks() {
 		fitToView	: true,
 		width		: '80%',
 		height		: '80%',
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'True',
+		closeEffect	: 'none'
+	});
+	
+	     $(".cal").fancybox({
+		maxWidth	: 1024,
+		maxHeight	: 650,
+		fitToView	: true,
+		width		: '40%',
+		height		: '40%',
 		autoSize	: true,
 		closeClick	: false,
 		openEffect	: 'True',
@@ -147,6 +162,36 @@ function removeLinks() {
                 <img src="images/homepage.png" width="100%" />
                 <h4>Opening in Long Island City,
                     <br/>Fall 2013</h4>
+                    <br/><br/>
+              <div id="gcf-ticker" style="width: 850px;; height: 40px;">
+  <div class="gcf-header-block">
+    <div class="gcf-title-block">
+        Upcoming Events:
+    </div>
+  </div>
+  <div class="gcf-item-container-block">
+    <div class="gcf-item-block">
+      <div class="gcf-item-header-block">
+        <div class="gcf-item-title-block">
+          (<span class="gcf-item-update-date">20/12</span>)
+          <span class="gcf-item-title">Item Title of Your event</span>
+           <span class="gcf-item-description"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $('#gcf-ticker').gCalFlow({
+      calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com',
+      maxitem: 25,
+      scroll_interval: 5 * 1000,
+      date_formatter: function (date, allday_p) {
+        function pad(n) { return n < 10 ? "0"+n : n; }
+        return pad(date.getMonth()+1) + "/" + pad(date.getDate()) + "/" + date.getFullYear().toString().substr(-2);
+      }
+    });
+</script>
             </div>
             <!-- closing home -->
             <div id="inkuirer" class="step slide" data-x="2000" data-y="-1450" data-z="-50" data-scale="0.9">
@@ -439,7 +484,10 @@ function removeLinks() {
                 </section>
             </div>
      <div id="events" class="step slide" data-rotate="170" data-x="7000" data-y="-900">
-        <iframe src="http://www.google.com/calendar/embed?src=paperfactoryhotel.com_nmihtkci5hen3793ifkashhms4%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+		<a class="cal" data-fancybox-type="iframe" href="/cal/cal.html">To our full events calendar</a>
+
+
                 
             <div id="opencanvasday" class="step" data-z="9999" data-rotate="170" data-x="7000" data-y="-900" >
                 <div class="leftSide">
