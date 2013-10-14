@@ -10,7 +10,7 @@
   .gCalFlow a, .gCalFlow a:visited, .gCalFlow a:hover {
     color: inherit;
     color: black;
-    background-color: transparent;
+    background-color: #EEDC94;
     text-decoration: none; }
   .gCalFlow a:hover {
     text-decoration: underline; }
@@ -19,7 +19,7 @@
   .gCalFlow .gcf-title-block {
     font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-    color: white; }
+    color: #602614; }
     .gCalFlow .gcf-title-block a, .gCalFlow .gcf-title-block a:visited, .gCalFlow .gcf-title-block a:hover {
       color: white; }
   .gCalFlow .gcf-last-update-block {
@@ -28,12 +28,16 @@
     bottom: 0;
     right: 0;
     padding-right: 4px;
-    position: absolute; }
+    position: absolute;
+background-color:#d2d5f1;}
   .gCalFlow .gcf-item-container-block {
     position: relative;
     overflow: hidden;
     overflow-y: auto;
     height: 90%; }
+.gcf-item-block:nth-child(even) {
+  background-color:#d2d5f1;  
+}
   .gCalFlow .gcf-item-block {
     position: relative;
     overflow: hidden;
@@ -47,7 +51,7 @@
     font-size: 76%;
     font-weight: bold; }
   .gCalFlow .gcf-item-title-block {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); padding-left:5px;}
+    color: #602614;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7); padding-left:5px;}
   .gCalFlow .gcf-item-body-block {
     font-size: 80%;
     font-color: #999;
@@ -66,7 +70,7 @@
   background: linear-gradient(to bottom, white, #eeeeee);
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ffeeee);
   zoom: 1;
-  color: blak; }
+  color: black; }
   .gCalFlow .gcf-header-block {
     -webkit-border-top-left-radius: 4px;
     -webkit-border-top-right-radius: 4px;
