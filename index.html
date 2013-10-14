@@ -90,6 +90,18 @@ function removeLinks() {
 		openEffect	: 'True',
 		closeEffect	: 'none'
 	});
+	
+              	     $(".git").fancybox({
+		maxWidth	: 1024,
+		maxHeight	: 800,
+		fitToView	: true,
+		width		: '40%',
+		height		: '60%',
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'True',
+		closeEffect	: 'none'
+	});
 });
      </script>      
     </head>
@@ -223,7 +235,7 @@ function removeLinks() {
             <!-- closing Location -->
             <div id="contact" class="step slide" data-x="500" data-y="-1825" data-scale="0.3">
                 <a href="tel:(718) 937-1200">(718) 937-1200</a>
-                <a href="mailto:info@tpfhotel.com">e-mail us</a>
+                <a class="git" data-fancybox-type="iframe" href="contact/index.php">e-mail us</a>
                 <div id="social">
                     <p>Follow us. Discover NYC. Get inspiried.</p>
                     <a id="fb" class="scalea" target="_blank" href="http://www.facebook.com/ThePaperFactoryHotel">
@@ -477,7 +489,7 @@ function removeLinks() {
   background: linear-gradient(to bottom, white, #eeeeee);
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ffeeee);
   zoom: 1;
-  color: black; ">hit the space</span> bar to browse our past events</a>
+  color: black; ">hit the space bar</span> to browse our past events</a>
 
            <div id="opencanvasday" class="step slide" data-y="-400" data-z="-300"  data-rotate-x="90" >
                 <div> 

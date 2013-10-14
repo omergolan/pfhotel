@@ -9,7 +9,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>HTML5 Contact Form</title>
+	<title>Paper Factory Hotel NYC Contact Form</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
@@ -25,7 +25,7 @@
 	<div id="container">
         <div id="contact-form" class="clearfix">
             <h1>Get In Touch!</h1>
-            <h2>Fill out our super swanky HTML5 contact form below to get in touch with us! Please provide as much information as possible for us to help you with your enquiry :)</h2>
+            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possible for us to help you with your enquiry :)</h2>
             <?php
 			//init variables
 			$cf = array();
