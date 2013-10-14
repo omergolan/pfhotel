@@ -25,7 +25,7 @@
 	<div id="container">
         <div id="contact-form" class="clearfix">
             <h1>Get In Touch!</h1>
-            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possible for us to help you with your enquiry :)</h2>
+            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possibles so that we can best assist you with yor needs.</h2>
             <?php
 			//init variables
 			$cf = array();
@@ -59,7 +59,7 @@
                 <label for="telephone">Telephone: </label>
                 <input type="tel" id="telephone" name="telephone" value="<?php echo ($sr && !$cf['form_ok']) ? $cf['posted_form_data']['telephone'] : '' ?>" />
                 
-                <label for="enquiry">Enquiry: </label>
+                <label for="enquiry">Select Subject: </label>
                 <select id="enquiry" name="enquiry">
                      <option value="Reservations" <?php echo ($sr && !$cf['form_ok'] && $cf['posted_form_data']['enquiry'] == 'Reservations') ? "selected='selected'" : '' ?>>Reservations</option>
                     <option value="Events" <?php echo ($sr && !$cf['form_ok'] && $cf['posted_form_data']['enquiry'] == 'Events') ? "selected='selected'" : '' ?>>Events</option>
@@ -67,13 +67,14 @@
                     <option value="Community" <?php echo ($sr && !$cf['form_ok'] && $cf['posted_form_data']['enquiry'] == 'Community') ? "selected='selected'" : '' ?>>Community</option>
              
                  <option value="Art" <?php echo ($sr && !$cf['form_ok'] && $cf['posted_form_data']['enquiry'] == 'Art') ? "selected='selected'" : '' ?>>Art</option>
+                   <option value="Other" <?php echo ($sr && !$cf['form_ok'] && $cf['posted_form_data']['enquiry'] == 'Other') ? "selected='selected'" : '' ?>>Other</option>
                 </select>
                 
                 <label for="message">Message: <span class="required">*</span></label>
                 <textarea id="message" name="message" placeholder="Your message must be greater than 20 charcters" required data-minlength="20"><?php echo ($sr && !$cf['form_ok']) ? $cf['posted_form_data']['message'] : '' ?></textarea>
                 
                 <span id="loading"></span>
-                <input type="submit" value="Holla!" id="submit-button" />
+                <input type="submit" value="Submit" id="submit-button" />
                 <p id="req-field-desc"><span class="required">*</span> indicates a required field</p>
             </form>
             <?php unset($_SESSION['cf_returndata']); ?>

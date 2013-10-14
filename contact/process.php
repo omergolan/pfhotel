@@ -48,7 +48,7 @@ if( isset($_POST) ){
 	
 	//send email if all is ok
 	if($formok){
-		$headers = "From: website@website.com" . "\r\n";
+		$headers = "From: website@paperfactory.com" . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		
 		$emailbody = "<p>You have recieved a new message from the enquiries form on your website.</p>
