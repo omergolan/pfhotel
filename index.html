@@ -90,18 +90,6 @@ function removeLinks() {
 		openEffect	: 'True',
 		closeEffect	: 'none'
 	});
-	
-              	     $(".git").fancybox({
-		maxWidth	: 1024,
-		maxHeight	: 800,
-		fitToView	: true,
-		width		: '40%',
-		height		: '60%',
-		autoSize	: true,
-		closeClick	: false,
-		openEffect	: 'True',
-		closeEffect	: 'none'
-	});
 });
      </script>      
     </head>
@@ -174,36 +162,7 @@ function removeLinks() {
                 <img src="images/homepage.png" width="100%" />
                 <h4>Opening in Long Island City,
                     <br/>Fall 2013</h4>
-                    <br/><br/>
-              <div id="gcf-ticker" style="width: 850px;; height: 40px;">
-  <div class="gcf-header-block">
-    <div class="gcf-title-block">
-        Upcoming Events:
-    </div>
-  </div>
-  <div class="gcf-item-container-block">
-    <div class="gcf-item-block">
-      <div class="gcf-item-header-block">
-        <div class="gcf-item-title-block">
-          (<span class="gcf-item-update-date">20/12</span>)
-          <span class="gcf-item-title">Item Title of Your event</span>
-           <span class="gcf-item-description"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script type="text/javascript">
-    $('#gcf-ticker').gCalFlow({
-      calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com',
-      maxitem: 25,
-      scroll_interval: 5 * 1000,
-      date_formatter: function (date, allday_p) {
-        function pad(n) { return n < 10 ? "0"+n : n; }
-        return pad(date.getMonth()+1) + "/" + pad(date.getDate()) + "/" + date.getFullYear().toString().substr(-2);
-      }
-    });
-</script>
+             
             </div>
             <!-- closing home -->
             <div id="inkuirer" class="step slide" data-x="2000" data-y="-1450" data-z="-50" data-scale="0.9">
@@ -235,7 +194,7 @@ function removeLinks() {
             <!-- closing Location -->
             <div id="contact" class="step slide" data-x="500" data-y="-1825" data-scale="0.3">
                 <a href="tel:(718) 937-1200">(718) 937-1200</a>
-                <a class="git" data-fancybox-type="iframe" href="contact/index.php">e-mail us</a>
+                <a class="cal" data-fancybox-type="iframe" href="contact/index.php">e-mail us</a>
                 <div id="social">
                     <p>Follow us. Discover NYC. Get inspiried.</p>
                     <a id="fb" class="scalea" target="_blank" href="http://www.facebook.com/ThePaperFactoryHotel">
@@ -478,8 +437,16 @@ function removeLinks() {
                 </section>
             </div>
      <div id="events" class="step slide" data-rotate="170" data-x="7000" data-y="-900">
-
-		<a class="cal" data-fancybox-type="iframe" href="cal/cal.html"><strong>Click here</strong> to see our Events Calendar, <span style="  border-style: solid;padding-right:6px;padding-left:6px;
+  <div id="gcf-design">
+    </div>
+    <script type="text/javascript">
+      $('#gcf-design').gCalFlow({
+        calid: '5aqohfa5ti1bp6ech03vt7g37c%40group.calendar.google.com',
+        maxitem: 20
+      });
+    </script>
+		<div style="margin-top:500px; clear:both; "></div>
+<span style="  border-style: solid;padding-right:6px;padding-left:6px;
   border-width: 1px;
   border-color: #ccc #999 #999 #ccc;
   -webkit-border-radius: 4px;
@@ -491,9 +458,10 @@ function removeLinks() {
   background: linear-gradient(to bottom, white, #eeeeee);
   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ffeeee);
   zoom: 1;
-  color: black; ">hit the space bar</span> to browse our past events</a>
+  color: black; ">hit the space bar</span> to check out our last event
 
-           <div id="opencanvasday" class="step slide" data-y="-400" data-z="-300"  data-rotate-x="90" >
+
+           <div id="opencanvasday" class="step slide" data-y="-600" data-z="-500"  data-rotate-x="90" >
                 <div> 
                 <div class="leftSide">
                     <h3>Your chance to inspire.</h3>
@@ -526,9 +494,11 @@ function removeLinks() {
             <!-- closing Open Canvas Day -->
             </div>
 
-            <div id="slide2" class="step slide" data-y="-200"  data-rotate-x="180" >
-                <div><h2>Hot Jazzz, Coffee, and Sweet Chocolates <br/> Prepare yourself for our first winter event!</h2></div>
+<!--
+            <div id="slide2" class="step slide" data-y="-200" data-x="-200"  data-rotate-x="180" >
+                <div><h2>Hot Jazzzzz, Coffee, and Sweet Chocolates <br/> Prepare yourself for our first winter event!</h2></div>
             </div>
+-->
 
 <!--
             <div id="slide3" class="step slide" data-y="-400" data-z="200"  data-rotate-x="270" >

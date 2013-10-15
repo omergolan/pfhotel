@@ -83,7 +83,7 @@ a:hover { color: #036; }
 	background-color:#F2F7F9;
 	width:465px;
 	padding:20px;
-	margin: 50px auto;	
+	margin:0px auto;	
 	border: 6px solid #8FB5C1;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
@@ -126,7 +126,7 @@ a:hover { color: #036; }
 }
 
 #contact-form textarea {
-	height:150px;
+	height:90px;
 	resize: none;
 }
 

@@ -25,7 +25,7 @@
 	<div id="container">
         <div id="contact-form" class="clearfix">
             <h1>Get In Touch!</h1>
-            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possibles so that we can best assist you with yor needs.</h2>
+            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possibles so that we can best assist you with your needs.</h2>
             <?php
 			//init variables
 			$cf = array();
@@ -37,7 +37,7 @@
 			}
             ?>
             <ul id="errors" class="<?php echo ($sr && !$cf['form_ok']) ? 'visible' : ''; ?>">
-                <li id="info">There were some problems with your form submission:</li>
+                <li id="info">There were some problems with your submission:</li>
                 <?php 
 				if(isset($cf['errors']) && count($cf['errors']) > 0) :
 					foreach($cf['errors'] as $error) :
