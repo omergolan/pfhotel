@@ -25,7 +25,7 @@
 	<div id="container">
         <div id="contact-form" class="clearfix">
             <h1>Get In Touch!</h1>
-            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possibles so that we can best assist you with your needs.</h2>
+            <h2>Fill out our super simple contact form below to get in touch with us! Please provide as much information as possible so that we can best assist you.</h2>
             <?php
 			//init variables
 			$cf = array();
