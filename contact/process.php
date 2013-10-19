@@ -55,11 +55,11 @@ if( isset($_POST) ){
 					  <p><strong>Name: </strong> {$name} </p>
 					  <p><strong>Email Address: </strong> {$email} </p>
 					  <p><strong>Telephone: </strong> {$telephone} </p>
-					  <p><strong>Enquiry: </strong> {$enquiry} </p>
+					  <p><strong>Inquiry: </strong> {$enquiry} </p>
 					  <p><strong>Message: </strong> {$message} </p>
 					  <p>This message was sent from the IP Address: {$ipaddress} on {$date} at {$time}</p>";
 		
-		mail("info@tpfhotel.com, rinat@tpfhotel.com","New Enquiry From paperfactory.com",$emailbody,$headers);
+		mail("info@tpfhotel.com, rinat@tpfhotel.com, cf@tpfhotel.com","New inquiry about {$enquiry} From {$name} on paperfactory.com",$emailbody,$headers);
 		
 	}
 	
